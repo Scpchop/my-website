@@ -1,66 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryan Fong | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Fong | Web Designer</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; color: #333; background: #fff; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo { font-size: 24px; font-weight: bold; color: #2c7a7b; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { color: #2c7a7b; }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+      background: linear-gradient(to right, #f8f9fa 50%, #2c7a7b 50%);
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h3 {
+      font-weight: normal;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .hero-text a.button {
+      background: #2c7a7b;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .hero-text a.button:hover {
+      background: #245f61;
+    }
+
+    .hero-image {
+      flex: 1;
       text-align: center;
     }
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 50px 0;
+
+    .hero-image img {
+      max-width: 250px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
-    header h1 {
-      margin: 0;
-      font-size: 48px;
-    }
-    header p {
-      font-size: 18px;
-      color: #ccc;
-    }
-    section {
-      padding: 40px 20px;
-    }
-    .project {
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 600px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      padding: 20px 0;
-      font-size: 14px;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        background: #fff;
+      }
+      .hero-text {
+        margin-top: 40px;
+      }
     }
   </style>
 </head>
 <body>
 
- <header>
-  <img src="ryan.jpg" alt="Ryan Fong" style="border-radius: 50%; width: 150px; margin-bottom: 20px;">
-  <h1>Ryan Fong</h1>
-  <p>Web Designer | Tech Support | Online Assistant</p>
-</header>
+  <nav>
+    <div class="logo">Ryan Fong</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-
-  <section>
-    <h2>About Me</h2>
-    <p>Hi! I'm Ryan Fong — an 18-year-old with experience in web design, business assistance, and tech support. I help businesses and individuals build clean, functional websites and solve their tech challenges.</p>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hello, I'm <span style="color:#2c7a7b">Ryan Fong</span></h1>
+      <h3>Web Designer | Tech Support | Online Assistant</h3>
+      <p>I'm an 18-year-old with hands-on experience helping clients build clean, modern websites and solve real tech problems.</p>
+      <a class="button" href="mailto:ryanfongworking@gmail.com">Hire Me</a>
+    </div>
+    <div class="hero-image">
+      <img src="ryan.jpg" alt="Ryan Fong">
+    </div>
   </section>
 
   <style>
