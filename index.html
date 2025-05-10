@@ -22,7 +22,7 @@
 
     nav .logo { font-size: 24px; font-weight: bold; color: #2c7a7b; }
     nav ul { list-style: none; display: flex; gap: 30px; }
-    nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; cursor: pointer; }
     nav ul li a:hover { color: #2c7a7b; }
 
     .hero {
@@ -82,6 +82,18 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
 
+    #projects {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      padding: 40px 20px;
+    }
+
+    #projects.show {
+      display: block;
+      opacity: 1;
+    }
+
     @media (max-width: 768px) {
       .hero {
         flex-direction: column-reverse;
@@ -99,9 +111,9 @@
   <nav>
     <div class="logo">Ryan Fong</div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a onclick="scrollToSection('about')">About</a></li>
+      <li><a onclick="revealProjects()">Projects</a></li>
+      <li><a onclick="scrollToSection('contact')">Contact</a></li>
     </ul>
   </nav>
 
@@ -117,42 +129,40 @@
     </div>
   </section>
 
-  <style>
-  .project:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.02);
-    transition: 0.2s ease;
-  }
-</style>
+  <!-- Projects section (hidden by default) -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <a href="trainer.html" target="_blank" style="text-decoration: none; color: inherit;">
+  <div class="project" style="cursor: pointer; margin: 20px auto; padding: 20px; max-width: 600px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h3>Personal Trainer Website</h3>
+    <p>A one-page site for a fitness coach with booking, service listings, and contact form.</p>
+  </div>
+</a>
 
-<section>
-  <h2>Projects</h2>
+<a href="small-business.html" target="_blank" style="text-decoration: none; color: inherit;">
+  <div class="project" style="cursor: pointer; margin: 20px auto; padding: 20px; max-width: 600px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h3>Small Business Support</h3>
+    <p>Built a site for a bakery and set up basic CRM tools to handle orders and customer info.</p>
+  </div>
+</a>
+  </section>
 
-  <a href="trainer.html" target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="project" style="cursor: pointer; margin: 20px auto; padding: 20px; max-width: 600px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-      <h3>Personal Trainer Website</h3>
-      <p>A one-page site for a fitness coach with booking, service listings, and contact form.</p>
-    </div>
-  </a>
+  <script>
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
 
-  <a href="small-business.html" target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="project" style="cursor: pointer; margin: 20px auto; padding: 20px; max-width: 600px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-      <h3>Small Business Support</h3>
-      <p>Built a site for a bakery and set up basic CRM tools to handle orders and customer info.</p>
-    </div>
-  </a>
-</section>
-
-
-<section>
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:ryanfongworking@gmail.com">ryanfongworking@gmail.com</a></p>
-</section>
-
-
-  <footer>
-    <p>© 2025 Ryan Fong. Built with 💻 and GitHub Pages.</p>
-  </footer>
+    function revealProjects() {
+      const section = document.getElementById('projects');
+      if (section) {
+        section.classList.add('show');
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
 
 </body>
 </html>
