@@ -85,8 +85,13 @@
     }
 
     #projects {
+      display: none;
       padding: 60px 20px;
       background: #fff;
+    }
+
+    #projects.show {
+      display: block;
     }
 
     #projects h2 {
@@ -124,7 +129,7 @@
     <div class="logo">Ryan Fong</div>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a onclick="toggleProjects()">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -157,5 +162,16 @@
     </a>
   </section>
 
+  <script>
+    function toggleProjects() {
+      const section = document.getElementById('projects');
+      section.classList.toggle('show');
+      if (section.classList.contains('show')) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
 </body>
 </html>
+
