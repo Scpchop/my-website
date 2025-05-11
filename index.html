@@ -85,13 +85,8 @@
     }
 
     #projects {
-      display: none;
       padding: 60px 20px;
       background: #fff;
-    }
-
-    #projects.show {
-      display: block;
     }
 
     #projects h2 {
@@ -129,7 +124,7 @@
     <div class="logo">Ryan Fong</div>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a onclick="toggleProjects()">Projects</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -146,31 +141,7 @@
     </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <a href="trainer.html" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="project">
-        <h3>Personal Trainer Website</h3>
-        <p>A one-page site for a fitness coach with booking, service listings, and contact form.</p>
-      </div>
-    </a>
-    <a href="small-business.html" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="project">
-        <h3>Small Business Support</h3>
-        <p>Built a site for a bakery and set up basic CRM tools to handle orders and customer info.</p>
-      </div>
-    </a>
-  </section>
-
-  <script>
-    function toggleProjects() {
-      const section = document.getElementById('projects');
-      section.classList.toggle('show');
-      if (section.classList.contains('show')) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  </script>
+  
 
 </body>
 </html>
