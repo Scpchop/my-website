@@ -33,7 +33,7 @@
       justify-content: space-between;
       padding: 60px 10%;
       min-height: 100vh;
-      background: linear-gradient(to right, #f8f9fa 50%, #2c7a7b 50%);
+      background: radial-gradient(circle at right, #2c7a7b 0%, #f8f9fa 100%);
     }
 
     .hero-text {
@@ -78,42 +78,28 @@
     }
 
     .hero-image img {
-      max-width: 250px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
-      border: 4px solid #fff;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    }
-
-    #projects {
-      padding: 60px 20px;
-      background: #fff;
-    }
-
-    #projects h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .project {
-      cursor: pointer;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 600px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border: 6px solid #fff;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      object-fit: cover;
     }
 
     @media (max-width: 768px) {
       .hero {
         flex-direction: column-reverse;
         text-align: center;
-        background: #fff;
+        background: linear-gradient(to bottom, #f8f9fa, #2c7a7b);
         min-height: auto;
         padding: 40px 20px;
       }
       .hero-text {
         margin-top: 40px;
+      }
+      .hero-image img {
+        width: 180px;
+        height: 180px;
       }
     }
   </style>
@@ -141,8 +127,7 @@
     </div>
   </section>
 
-  
-
 </body>
 </html>
+
 
