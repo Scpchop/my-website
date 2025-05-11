@@ -73,9 +73,12 @@
     }
 
     .project {
+      display: flex;
+      align-items: center;
+      gap: 20px;
       background: white;
       padding: 20px;
-      max-width: 600px;
+      max-width: 700px;
       width: 100%;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -87,17 +90,35 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
+    .project img {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .project-info {
+      flex: 1;
+    }
+
     .project h3 {
-      margin-top: 0;
+      margin: 0 0 10px;
     }
 
     .project p {
+      margin: 0;
       color: #555;
     }
 
     @media (max-width: 768px) {
-      .project-container {
-        padding: 20px;
+      .project {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .project img {
+        width: 80%;
+        margin-bottom: 15px;
       }
     }
   </style>
@@ -120,15 +141,21 @@
   <section class="project-container">
     <a href="trainer.html" style="text-decoration: none; color: inherit;">
       <div class="project">
-        <h3>Personal Trainer Website</h3>
-        <p>A one-page site for a fitness coach with booking, service listings, and contact form.</p>
+        <img src="trainer-preview.jpg" alt="Personal Trainer Website" />
+        <div class="project-info">
+          <h3>Personal Trainer Website</h3>
+          <p>A one-page site for a fitness coach with booking, service listings, and contact form.</p>
+        </div>
       </div>
     </a>
 
     <a href="small-business.html" style="text-decoration: none; color: inherit;">
       <div class="project">
-        <h3>Small Business Support</h3>
-        <p>Built a site for a bakery and set up basic CRM tools to handle orders and customer info.</p>
+        <img src="smallbiz-preview.jpg" alt="Small Business Support" />
+        <div class="project-info">
+          <h3>Small Business Support</h3>
+          <p>Built a site for a bakery and set up basic CRM tools to handle orders and customer info.</p>
+        </div>
       </div>
     </a>
   </section>
